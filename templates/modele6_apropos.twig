@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="css/apropos.css">
+{% endblock style %}
+
+{% block en %}
+page6_apropos_en.php
+{% endblock %}
+
+{% block fr %}
+page6_apropos.php
+{% endblock %}
+
+{% block aside %}
+<h5>A Propos</h5>
+<ul>
+    <li><a href="page2_starters.php">Starters</a></li>
+    <li><a href="page3_regions.php">Régions</a></li>
+    <li><a href="page4_objets.php">Objets</a></li>
+</ul>
+{% endblock %}
+
+{% block main %}
+<h2>{{aside.titre}}</h2>
+<section class="cgu">
+    <h3>{{main.h3}}</h3>
+    {% for article in main.articles %}
+        <p><span>{{article.span}} :</span> {{article.contenu|raw}}</p>
+    {% endfor %}
+</section>
+{% endblock main %}

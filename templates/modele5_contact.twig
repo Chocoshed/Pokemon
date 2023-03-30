@@ -1,0 +1,88 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="css/contact.css">
+{% endblock style %}
+
+{% block en %}
+page5_contact_en.php
+{% endblock %}
+
+{% block fr %}
+page5_contact.php
+{% endblock %}
+
+{% block main %}
+
+<h2>Contact</h2>
+<section>
+    <h3>{{ main.title }}</h3>
+    <form action="#" method="post" onsubmit="return false">
+        <fieldset>
+            <legend>{{ main.first_fieldset.legend }}</legend>
+            {% for radio in main.first_fieldset.radios %}
+                <input type="radio" name="{{ main.first_fieldset.name }}" id="{{ radio.id }}" value="{{ radio.value }}">
+                <label for="{{ radio.id }}">{{radio.label}}</label>
+            {% endfor %}
+            <input type="text" name="{{ main.first_fieldset.name }}" id="{{ main.first_fieldset.precision_id }}" placeholder="{{ main.first_fieldset.precision_placeholder }}">
+            <p>{{ main.first_fieldset.p }}</p>
+        </fieldset>
+        <fieldset>
+            <legend>{{ main.second_fieldset.legend }}</legend>
+            {% for checkbox in main.second_fieldset.checkboxes %}
+                <input type="checkbox" name="{{ main.second_fieldset.name }}" id="{{ checkbox.id }}" value="{{ checkbox.value }}">
+                <label for="{{ checkbox.id }}">{{ checkbox.label }}</label>
+            {% endfor %}
+            <p>{{ main.second_fieldset.p }}</p>
+        </fieldset>
+        <fieldset class="profil">
+            <legend>{{ main.third_fieldset.legend }}</legend>
+            <div>
+                <label for="{{ main.third_fieldset.age.id }}">{{ main.third_fieldset.age.label }}</label>
+                <input type="number" name="{{ main.third_fieldset.age.name }}" id="{{ main.third_fieldset.age.id }}" min="0" max="100">
+            </div>
+            <div>
+                <label for="{{ main.third_fieldset.origine.id }}">{{ main.third_fieldset.origine.label }}</label>
+                <select name="{{main.third_fieldset.origine.name}}" id="{{ main.third_fieldset.origine.id }}">
+                    {% for origine in main.third_fieldset.origine.pays %}
+                        <option value="{{origine}}">{{origine}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="{{main.third_fieldset.statut.id}}">{{main.third_fieldset.statut.label}}</label>
+                <select name="{{main.third_fieldset.statut.name}}" id="{{main.third_fieldset.statut.id}}">
+                    <optgroup label="{{main.third_fieldset.statut.optgroup.label_act}}">
+                        {% for activite in main.third_fieldset.statut.optgroup.activites %}
+                        <option value="{{activite.value}}">{{activite.label}}</option>
+                        {% endfor %}
+                    </optgroup>
+                    <optgroup label="{{main.third_fieldset.statut.optgroup.label_autre}}">
+                        {% for autre in main.third_fieldset.statut.optgroup.autre %}
+                        <option value="{{autre.value}}">{{autre.label}}</option>
+                        {% endfor %}
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label for="ville">{{main.third_fieldset.ville.label}}</label>
+                <input type="text" id="ville" placeholder="{{main.third_fieldset.ville.placeholder}}">
+            </div>
+            <div>
+                <label for="mail">{{main.third_fieldset.mail.label}}</label>
+                <input type="email" id="mail" placeholder="{{main.third_fieldset.mail.placeholder}}">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>{{main.commentaire_fieldset.legend}}</legend>
+            <textarea name="commentaire" id="commentaire" cols="60" rows="10"
+                placeholder="{{main.commentaire_fieldset.placeholder}}"></textarea>
+        </fieldset>
+        <fieldset>
+            <input type="submit" onclick="alert('{{main.button.alert}}')">
+            <input type="reset">
+        </fieldset>
+    </form>
+</section>
+
+{% endblock main %}

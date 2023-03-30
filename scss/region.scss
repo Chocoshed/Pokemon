@@ -1,0 +1,24 @@
+h3{
+    margin: 20px 0;
+}
+
+main{
+    section{
+        article{
+            font-size: 10pt;
+            figure{
+                float: right;
+                font-size: 8pt;
+                margin: 25px 0 10px 25px;
+                figcaption{
+                    text-align: center;
+                }
+            }
+            details{
+                summary:hover{
+                    cursor: url('../images/main_30px.png'), pointer;
+                }
+            }
+        }
+    }
+}

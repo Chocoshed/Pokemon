@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titre %}{% endblock %} | Les Pokemons</title>
+    <link rel="stylesheet" href="css/style.css">
+    {% block style %}
+    {% endblock %}
+    <link rel="icon" href="images/pokeball.ico" type="image/x-icon" />
+    {% block script %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="wrapper">
+        <header role="banner">
+            <h1>Pokemon</h1>
+            <nav role="navigation">
+                <ul>
+                    {% for onglet in header %}
+                    <li><a href="{{onglet.href}}">{{onglet.nom}}</a></li>
+                    {% endfor %}
+                    <li><a href="{% block en %}{% endblock %}" lang="en" hreflang="en">ENG</a></li>
+                    <li><a href="{% block fr %}{% endblock %}" lang="fr" hreflang="fr">FR</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="maincontent">
+
+            <aside>
+                <section>
+                    <h5>{{aside.titre}}</h5>
+                    <ul>
+                        {% for lien in aside.lien %}
+                        <li><a href="{{lien.href}}">{{lien.nom}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </section>
+                <section>
+                    <h5>{{asideActu.h5}}</h5>
+                    <article>
+                        <p>{{asideActu.p}}</p>
+                        <figure><img src="{{asideActu.img}}" alt="{{asideActu.img}}"></figure>
+                    </article>
+                </section>
+                <a href="#top">{{asideActu.top}}</a>
+            </aside>
+
+            <main>
+                {% block main %}
+                {% endblock %}
+            </main>
+        </div>
+        <footer>
+            <ul>
+                {% for item in footer %}
+                    <li>
+                        <a href="{{ item.url }}">{{ item.title }}</a>
+                        {% if item.submenu is defined and item.submenu|length %}
+                            <ul>
+                                {% for subitem in item.submenu %}
+                                    <li>
+                                        <a href="{{ subitem.url }}">{{ subitem.title }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <p><span>©</span> Fromageat Julie</p>
+        </footer>
+    </div class="wrapper">
+</body>
+
+</html>

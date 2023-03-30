@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="css/region.css" />
+{% endblock %}
+
+{% block titre %}
+{{regionInfo.titre}}
+{% endblock %}
+
+{% block en %}
+page3_regions_en.php
+{% endblock %}
+
+{% block fr %}
+page3_regions.php
+{% endblock %}
+
+{% block main %}
+<h2>{{regionInfo.h2}}</h2>
+<section>
+    {% for article in region %}
+    <article>
+        <h3 id="{{article.id}}">{{article.h3}}</h3>
+        <figure>
+            <img src="{{article.img}}" alt="{{article.alt}}">
+            <figcaption>{{article.legende}}</figcaption>
+        </figure>
+        <p>{{article.description|raw}}</p>
+        <details>{{article.suite|raw}}</details>
+        <details>{{article.ville|raw}}</details>
+    </article>
+    {% endfor %}
+</section>
+{% endblock %}

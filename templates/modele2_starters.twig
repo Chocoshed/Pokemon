@@ -1,0 +1,67 @@
+{% extends "base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="css/starters.css" />
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="Js/script.js" defer></script>
+{% endblock %}
+
+{% block titre %}
+{{starters.titre}}
+{% endblock %}
+
+{% block en %}
+page2_starters_en.php
+{% endblock %}
+
+{% block fr %}
+page2_starters.php
+{% endblock %}
+
+{% block main %}
+<h2>{{starters.h2}}</h2>
+{% for article in gen %}
+<section class="article">
+    <header>
+        <h3 id="{{article.id}}">{{article.h3}}</h3>
+        <nav>
+            <button data-pos="{{article.dataPos}}" data-content="Eau"></button>
+            <button data-pos="{{article.dataPos}}" data-content="Feu"></button>
+            <button data-pos="{{article.dataPos}}" data-content="Plante"></button>
+        </nav>
+    </header>
+    <section class="{{article.class}}">
+        {% for type in article.type %}
+        <section>
+            <article>
+                <h4>{{ type.h4 }}</h4>
+                <h5>{{ type.h5 }}</h5>
+                <audio src="{{type.audio}}" controls="" volume="0.2"></audio>
+                <img src="{{type.img}}" alt="{{type.alt}}">
+                <p>{{type.version|raw}}</p>
+                <p>{{type.evolution|raw}}</p>
+                <p>{{type.description|raw}}</p>
+            </article>
+            <article>
+                <table>
+                    <caption>{{type.caracteristiques.titre}} :</caption>
+                    <tr>
+                        {% for key in type.caracteristiques.contenu %}
+                        <th>{{key.cle}}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        {% for value in type.caracteristiques.contenu %}
+                        <td>{{value.valeur}}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </article>
+        </section>
+        {% endfor %}
+    </section>
+</section>
+{% endfor %}
+{% endblock %}

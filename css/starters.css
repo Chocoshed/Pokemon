@@ -1,0 +1,104 @@
+h3 {
+  text-align: center;
+}
+
+main section header {
+  display: flex;
+  justify-content: space-between;
+}
+main section header nav {
+  justify-content: flex-end;
+  width: inherit;
+}
+main section h3 {
+  text-align: right;
+}
+main section h4 {
+  text-align: center;
+}
+main section h5 {
+  font-size: 10pt;
+}
+main section p:nth-of-type(2) ~ p {
+  font-size: 10pt;
+}
+main section img {
+  float: left;
+  height: 150px;
+  width: auto;
+  margin: 20px;
+}
+main section table {
+  width: 100%;
+}
+main section table caption {
+  font-size: 12pt;
+  padding: 5px;
+}
+main section table,
+main section table td,
+main section table th {
+  background-color: #754f8b;
+  border: #5b346e 2px solid;
+  padding: 5px;
+  text-align: center;
+}
+main section table th {
+  font-size: 8.5pt;
+}
+main section table td {
+  padding: 15px 5px;
+}
+main section section audio {
+  max-width: 100%;
+  float: right;
+}
+main section section article span {
+  text-decoration: underline;
+}
+main section section section {
+  display: none;
+}
+main section section section:first-child {
+  display: block;
+}
+
+main section header button {
+  border: none;
+  border: #ba98da 4px solid;
+  color: white;
+  font-family: "pixels", Arial, Helvetica, sans-serif;
+  height: 50px;
+  width: 70px;
+  padding: 0;
+  margin: 3px;
+}
+main section header button:nth-child(1) {
+  background: url(../images/type_eau_b.png), #ba98da;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+}
+main section header button:nth-child(2) {
+  background: url(../images/type_feu_b.png), #ba98da;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+}
+main section header button:nth-child(3) {
+  background: url(../images/type_plante_b.png), #ba98da;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: center;
+}
+main section header button:hover {
+  cursor: url("../images/main_30px.png"), pointer;
+  border: white 4px solid;
+  transition: 0.5s;
+  background-color: #9578b1;
+}
+main section header button:active {
+  border: #c2c2c2 4px solid;
+}
+
+/*# sourceMappingURL=starters.css.map */

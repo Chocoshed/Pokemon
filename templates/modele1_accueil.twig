@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block titre %}
+{{aside.titre}}
+{% endblock %}
+
+{% block en %}
+page1_accueil_en.php
+{% endblock %}
+
+{% block fr %}
+page1_accueil.php
+{% endblock %}
+
+
+{% block main %}
+<h2>{{main.h2}}</h2>
+<section>
+    <article>
+        <h3>{{main.h3}} :</h3>
+        <iframe src="{{main.trailer}}" title="YouTube video player last trailer"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </article>
+    <article>
+        <h4>{{main.h4}}</h4>
+        <p>{{main.contenu|raw}}</p>
+    </article>
+</section>
+{% endblock main %}

@@ -1,0 +1,42 @@
+{% extends "base.twig" %}
+
+{% block style %}
+<link rel="stylesheet" href="css/objects.css" />
+{% endblock %}
+
+{% block titre %}
+{{objetsInfo.titre}}
+{% endblock %}
+
+{% block en %}
+page4_objets_en.php
+{% endblock %}
+
+{% block fr %}
+page4_objets.php
+{% endblock %}
+
+{% block main %}
+<h2>{{objetsInfo.h2}}</h2>
+{% for article in objets %}
+<section>
+    <h3 id="{{article.id}}">{{article.h3}}</h3>
+    {% for type in article.objet %}
+    <article>
+        <figure>
+            {% if not type.video %}
+            <img src="{{type.img}}" alt="{{type.alt}}">
+            <figcaption>{{type.legende|raw}}</figcaption>
+            {% else %}
+            <video src="{{type.video}}" controls="" title="{{type.alt}}"></video>
+            {% endif %}
+        </figure>
+        <div>
+            <h4>{{type.h4}}</h4>
+            <p>{{type.description|raw}}</p>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+{% endfor %}
+{% endblock %}

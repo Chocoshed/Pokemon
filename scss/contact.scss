@@ -1,0 +1,84 @@
+form {
+
+    fieldset {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 24px;
+        &:first-child{
+            label{
+                width: 125px;
+                &:last-of-type{
+                    width: 70px;
+                }
+            }
+        }
+        &:last-child{
+            text-align: right;
+        }
+        textarea{
+            width: 99%;
+            resize:none;
+        }
+        legend {
+            font-size: 11pt;
+            font-family: 'pixels', Arial, Helvetica, sans-serif;
+        }
+
+        label {
+            font-family: 'pixels', Arial, Helvetica, sans-serif;
+            font-size: 9pt;
+            display: inline-block;
+            width: 196px;
+            &:hover {
+                cursor: url('../images/cursor_30px.png'), pointer;
+            }
+        }
+
+        input {
+            &:hover{
+                cursor: url('../images/main_30px.png'), pointer;
+            }
+
+            &[id='autre'] {
+                &+label[for='autre']+input {
+                    display: none;
+                }
+
+                &:checked+label[for='autre']+input {
+                    display: inline-block;
+                }
+            }
+
+            &[type='submit'],
+            &[type='reset'] {
+                cursor: url('../images/main_30px.png'), pointer;
+                font-family: 'pixels', Arial, Helvetica, sans-serif;
+                background-color: transparent;
+                border: #5b346e 4px solid;
+                color: rgb(255, 255, 255);
+                padding: 7px;
+
+                &:hover {
+                    border: white 4px solid;
+                    cursor: url('../images/main_30px.png'),
+                        pointer;
+                }
+
+                &:active {
+                    border: #c2c2c2 4px solid;
+                    color: #c2c2c2;
+                }
+            }
+
+        }
+    }
+}
+
+.profil{
+    div{
+        margin: 10px;
+    }
+    
+    input{
+        width: 200px;
+    }
+}

@@ -1,0 +1,64 @@
+form fieldset {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 24px;
+}
+form fieldset:first-child label {
+  width: 125px;
+}
+form fieldset:first-child label:last-of-type {
+  width: 70px;
+}
+form fieldset:last-child {
+  text-align: right;
+}
+form fieldset textarea {
+  width: 99%;
+  resize: none;
+}
+form fieldset legend {
+  font-size: 11pt;
+  font-family: "pixels", Arial, Helvetica, sans-serif;
+}
+form fieldset label {
+  font-family: "pixels", Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  display: inline-block;
+  width: 196px;
+}
+form fieldset label:hover {
+  cursor: url("../images/cursor_30px.png"), pointer;
+}
+form fieldset input:hover {
+  cursor: url("../images/main_30px.png"), pointer;
+}
+form fieldset input[id=autre] + label[for=autre] + input {
+  display: none;
+}
+form fieldset input[id=autre]:checked + label[for=autre] + input {
+  display: inline-block;
+}
+form fieldset input[type=submit], form fieldset input[type=reset] {
+  cursor: url("../images/main_30px.png"), pointer;
+  font-family: "pixels", Arial, Helvetica, sans-serif;
+  background-color: transparent;
+  border: #5b346e 4px solid;
+  color: rgb(255, 255, 255);
+  padding: 7px;
+}
+form fieldset input[type=submit]:hover, form fieldset input[type=reset]:hover {
+  border: white 4px solid;
+  cursor: url("../images/main_30px.png"), pointer;
+}
+form fieldset input[type=submit]:active, form fieldset input[type=reset]:active {
+  border: #c2c2c2 4px solid;
+  color: #c2c2c2;
+}
+
+.profil div {
+  margin: 10px;
+}
+.profil input {
+  width: 200px;
+}
+
+/*# sourceMappingURL=contact.css.map */
