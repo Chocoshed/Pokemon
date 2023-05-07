@@ -1,7 +1,6 @@
 # Projet web du premier semestre
 
 Ce site est le résultat de mon premier projet web réalisé lors du premier semestre ! Il mixe les notions de frontend et backend.
-> Il peut être visualisé >[ici](https://fromageat.etu.mmi-unistra.fr)<
 
 ##  Consignes
 
